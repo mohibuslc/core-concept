@@ -14,34 +14,51 @@ function App() {
     { name: 'Photo Shop', price: '$24.00' },
 
     { name: 'Muse', price: '$34.00' },
-    
-    { name: 'Keybord ', price: '$24.00' }
+
+    { name: 'Keybord ', price: '$24.00' },
+    { name: ' MotherBord', price: ' $ 200' }
 
   ]
 
   const nayoks = ['kamal', ' jamal', ' Tina']
- 
+
   const Persons = [
-    
-    { name : ' Jamal', job:' Web developer'}, 
-    { name : 'Kamal', job :' word Press developer '}
+
+    { name: ' Jamal', job: ' Web developer' },
+    { name: 'Kamal', job: ' word Press developer ' }
 
 
-]
 
+
+  ]
+
+
+
+  const nayoksData = nayoks.map(pd => pd)
+
+  console.log(nayoksData)
+
+  const productName = Products.map(pd => pd.price)
+  console.log(productName)
   return (
     <div className="App">
       <header className="App-header">
         <h2> Im React persone </h2>
         <u>
+          <h2>Nayoks Name List</h2>
+          {
+            nayoks.map(pd =>
 
-          { 
-          nayoks.map( pd => 
-          
-          <li>{pd}</li>
-          
-          
-          )
+              <li>{pd}</li>
+
+
+            )
+          }
+
+          <h2> Product  Name List</h2>
+          {
+
+            Products.map(pd => <li>{pd.name}</li>)
           }
         </u>
         {
@@ -51,12 +68,14 @@ function App() {
 
         {
 
-          Persons.map(pd => <Person person ={pd}></Person>)
+          Persons.map(pd => <Person person={pd}></Person>)
         }
 
       </header>
     </div>
   );
+
+
 
   function Product(props) {
 
@@ -102,8 +121,8 @@ function App() {
       margin: '20px',
       borderRadius: '10px'
     }
-    
-    const { name , job} = props.person
+
+    const { name, job } = props.person
     return (
 
       <div style={design}>
