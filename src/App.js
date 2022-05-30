@@ -5,6 +5,10 @@
 
 
 import './App.css';
+import React, { useState } from 'react';
+
+
+
 
 function App() {
 
@@ -16,6 +20,7 @@ function App() {
     { name: 'Muse', price: '$34.00' },
 
     { name: 'Keybord ', price: '$24.00' },
+
     { name: ' MotherBord', price: ' $ 200' }
 
   ]
@@ -27,12 +32,7 @@ function App() {
     { name: ' Jamal', job: ' Web developer' },
     { name: 'Kamal', job: ' word Press developer ' }
 
-
-
-
   ]
-
-
 
   const nayoksData = nayoks.map(pd => pd)
 
@@ -44,13 +44,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h2> Im React persone </h2>
+
+        <Count></Count>
         <u>
           <h2>Nayoks Name List</h2>
           {
             nayoks.map(pd =>
 
               <li>{pd}</li>
-
 
             )
           }
@@ -74,8 +75,40 @@ function App() {
       </header>
     </div>
   );
+  function Count (){
 
+    const [ count , setCount ] = useState(0) ;
 
+    function handleClick (){
+
+      const newCount = count + 1 ; 
+
+      setCount(newCount)
+
+    }
+    function handleClick1 (){
+
+      const newCount = count - 1 ; 
+
+      setCount(newCount)
+
+    }
+ 
+      return(
+    
+        <div>
+    
+          <h1>Count : {count}</h1>
+
+          <button onClick= {handleClick}> Incrase </button>
+
+          <button onClick= {handleClick1}> Decrase </button>
+        </div>
+      )
+    
+    
+    }
+                                                                                                                   
 
   function Product(props) {
 
@@ -133,5 +166,7 @@ function App() {
     )
   }
 }
+
+
 
 export default App;
